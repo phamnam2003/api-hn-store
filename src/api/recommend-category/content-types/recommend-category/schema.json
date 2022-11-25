@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recommend_categories",
+  "info": {
+    "singularName": "recommend-category",
+    "pluralName": "recommend-categories",
+    "displayName": "RecommendCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icon_src": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
