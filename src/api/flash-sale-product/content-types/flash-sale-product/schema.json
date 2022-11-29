@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flash_sale_products",
+  "info": {
+    "singularName": "flash-sale-product",
+    "pluralName": "flash-sale-products",
+    "displayName": "FlashSaleProduct"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "img_product_sale": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "original_price": {
+      "type": "string"
+    },
+    "percent": {
+      "type": "decimal"
+    }
+  }
+}

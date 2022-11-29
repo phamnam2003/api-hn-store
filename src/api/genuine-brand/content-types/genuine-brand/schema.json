@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "genuine_brands",
+  "info": {
+    "singularName": "genuine-brand",
+    "pluralName": "genuine-brands",
+    "displayName": "GenuineBrand"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "voucher": {
+      "type": "string"
+    },
+    "img_product": {
+      "type": "string"
+    }
+  }
+}
