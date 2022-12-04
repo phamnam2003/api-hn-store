@@ -69,6 +69,9 @@
       "relation": "manyToMany",
       "target": "api::cart.cart",
       "inversedBy": "products"
+    },
+    "rate_product": {
+      "type": "float"
     }
   }
 }
