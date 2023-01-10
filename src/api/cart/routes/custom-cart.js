@@ -12,6 +12,10 @@ module.exports = {
             method: "GET",
             path: "/cart/add/:id",
             handler: "cart.add"
+        }, {
+            method: "GET",
+            path: "/cart/remove/:id",
+            handler: "cart.remove"
         }
     ]
 }

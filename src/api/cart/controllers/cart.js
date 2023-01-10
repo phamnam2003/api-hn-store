@@ -84,5 +84,42 @@ module.exports = createCoreController('api::cart.cart', ({ strapi }) => ({
             console.log(err);
             ctx.body = err;
         }
+    }, 
+    async remove (ctx) {
+        try {
+            const user_id = ctx.state.user.id;
+            const product_id = parseInt(ctx.params.id);
+
+            const cart_find = await strapi.entityService.findMany("api::cart.cart", {
+                fields: ['id'],
+                filters: { user_id },
+                populate: { products: true }
+            });
+
+            let new_cart = [];
+            cart_find[0].products.map(product => new_cart.push(product.id));
+
+            new_cart = new_cart.filter(item => item !== product_id);
+
+            const cart_id = cart_find[0].id;
+
+            console.log(cart_find[0].products);
+            const cart_update = await strapi.entityService.update("api::cart.cart", cart_id, {
+                data: {
+                    products: new_cart
+                }
+            });
+
+            const cart_deleted = await strapi.entityService.findMany("api::cart.cart", {
+                fields: ['id'],
+                filters: { user_id },
+                populate: { products: true }
+            });
+            ctx.body = cart_deleted[0].products;
+        }
+        catch (err) {
+            console.log(err);
+            ctx.body = err;
+        }
     }
 }));
